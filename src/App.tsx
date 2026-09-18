@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { ThemeProvider, CssBaseline } from '@mui/material'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { theme } from './theme'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
@@ -12,13 +13,20 @@ import SocialProof from './sections/SocialProof'
 import FAQ from './sections/FAQ'
 import Contact from './sections/Contact'
 import Footer from './sections/Footer'
+import HomePage from './pages/HomePage'
+import DrivingSchoolSoftware from './pages/DrivingSchoolSoftware'
+import DrivingSchoolManagementSoftware from './pages/DrivingSchoolManagementSoftware'
+import DrivingSchoolSchedulingSoftware from './pages/DrivingSchoolSchedulingSoftware'
+import DrivingSchoolStudentManagement from './pages/DrivingSchoolStudentManagement'
+import PricingPage from './pages/PricingPage'
+import FAQPage from './pages/FAQPage'
 import CustomerDashboard from './pages/CustomerDashboard'
 import PurchaseDialog from './components/PurchaseDialog'
 import { supabase } from './lib/supabase'
 
 type View = 'home' | 'dashboard'
 
-export default function App() {
+function AppContent() {
   const [view, setView] = useState<View>('home')
   const [authOpen, setAuthOpen] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -56,39 +64,41 @@ export default function App() {
     setView('home')
   }
 
-  // Dashboard view
+  // Dashboard view (not a route — controlled by auth state)
   if (view === 'dashboard') {
-    return (
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <CustomerDashboard onLogout={handleLogout} />
-      </ThemeProvider>
-    )
+    return <CustomerDashboard onLogout={handleLogout} />
   }
 
-  // Home view
+  // Routed views
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
       <Navbar onDashboardClick={handleDashboardClick} />
-      <main>
-        <Hero />
-        <Features />
-        <InstructorApp />
-        <HowItWorks />
-        <Pricing onBuyClick={() => setAuthOpen(true)} />
-        <WhySod />
-        <SocialProof />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/driving-school-software" element={<DrivingSchoolSoftware />} />
+        <Route path="/driving-school-management-software" element={<DrivingSchoolManagementSoftware />} />
+        <Route path="/driving-school-scheduling-software" element={<DrivingSchoolSchedulingSoftware />} />
+        <Route path="/driving-school-student-management" element={<DrivingSchoolStudentManagement />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+      </Routes>
 
       <PurchaseDialog
         open={authOpen}
         onClose={() => setAuthOpen(false)}
         onAuthSuccess={handleAuthSuccess}
       />
-    </ThemeProvider>
+    </>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppContent />
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }

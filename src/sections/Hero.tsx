@@ -109,6 +109,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <Typography
+              component="h1"
               variant="h1"
               className="hero-heading"
               sx={{
@@ -150,7 +151,7 @@ export default function Hero() {
                 },
               }}
             >
-              Run your driving school from one{' '}
+              Driving School Software for{' '}
               <Box
                 component="span"
                 sx={{
@@ -159,9 +160,8 @@ export default function Hero() {
                   WebkitTextFillColor: 'transparent',
                 }}
               >
-                powerful
-              </Box>{' '}
-              desktop app.
+                Managing Your Entire School
+              </Box>
             </Typography>
           </motion.div>
 
@@ -175,11 +175,11 @@ export default function Hero() {
                 fontSize: { xs: '0.9rem', md: '1rem' },
                 color: 'rgba(255,255,255,0.55)',
                 lineHeight: 1.6,
-                maxWidth: 480,
+                maxWidth: 520,
                 mb: 3,
               }}
             >
-              SoD Driving School Pro is a one-time purchase Windows desktop application for managing driving schools. It handles student registration, automatic lesson scheduling, finance tracking, vehicle management, document generation, WhatsApp integration, and includes a free instructor Android app. Designed for Pakistani driving schools, it works offline with a local database and costs PKR 22,400 for a lifetime license with no monthly fees.
+              Set on Desk is driving school management software designed to help driving schools manage students, instructors, driving lessons, schedules, payments, records and everyday operations from one powerful desktop application.
             </Typography>
           </motion.div>
 

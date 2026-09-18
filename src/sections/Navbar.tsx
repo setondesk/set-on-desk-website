@@ -1,22 +1,27 @@
 import { useState, useEffect } from 'react'
 import { Box, IconButton, Drawer, List, ListItemButton, ListItemText } from '@mui/material'
+import { useLocation } from 'react-router-dom'
 import { Menu, X, LayoutDashboard } from 'lucide-react'
 import Logo from '../components/Logo'
 import { PrimaryButton, GhostButton } from '../components/Buttons'
 import { supabase } from '../lib/supabase'
 
-const links = [
-  { label: 'Features', href: '#features' },
-  { label: 'Instructor App', href: '#instructor-app' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'Contact', href: '#contact' },
+const sectionLinks = [
+  { label: 'Features', href: '/#features' },
+  { label: 'Instructor App', href: '/#instructor-app' },
+  { label: 'How It Works', href: '/#how-it-works' },
+]
+
+const pageLinks = [
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'FAQ', to: '/faq' },
 ]
 
 export default function Navbar({ onDashboardClick }: { onDashboardClick: () => void }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -34,6 +39,13 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
     })
     return () => listener.subscription.unsubscribe()
   }, [])
+
+  // Close mobile drawer on route change
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
+
+  const isHomePage = location.pathname === '/'
 
   return (
     <Box
@@ -61,15 +73,33 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
           justifyContent: 'space-between',
         }}
       >
-        <a href="#top" aria-label="Set On Desk home">
+        <a href="/" aria-label="Set On Desk home">
           <Logo />
         </a>
 
         <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 3.5 }}>
-          {links.map((l) => (
+          {/* Section links — only meaningful on homepage */}
+          {isHomePage && sectionLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
+              style={{
+                color: 'rgba(255,255,255,0.65)',
+                fontSize: '0.9rem',
+                fontWeight: 500,
+                transition: 'color 0.2s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#fff')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}
+            >
+              {l.label}
+            </a>
+          ))}
+          {/* Page links */}
+          {pageLinks.map((l) => (
+            <a
+              key={l.to}
+              href={l.to}
               style={{
                 color: 'rgba(255,255,255,0.65)',
                 fontSize: '0.9rem',
@@ -105,7 +135,7 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
             </GhostButton>
           )}
 
-          <PrimaryButton component="a" href="#pricing" size="small" sx={{ py: 1, px: 2.5, fontSize: '0.88rem' }}>
+          <PrimaryButton component="a" href="/pricing" size="small" sx={{ py: 1, px: 2.5, fontSize: '0.88rem' }}>
             Get License
           </PrimaryButton>
         </Box>
@@ -139,12 +169,28 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
           </IconButton>
         </Box>
         <List>
-          {links.map((l) => (
+          {/* Section links on homepage */}
+          {isHomePage && sectionLinks.map((l) => (
             <ListItemButton
               key={l.href}
               component="a"
               href={l.href}
-              onClick={() => setOpen(false)}
+              sx={{
+                borderRadius: '8px',
+                mb: 0.5,
+                color: '#fff',
+                '&:hover': { background: 'rgba(255,255,255,0.05)' },
+              }}
+            >
+              <ListItemText primary={l.label} primaryTypographyProps={{ fontWeight: 500 }} />
+            </ListItemButton>
+          ))}
+          {/* Page links */}
+          {pageLinks.map((l) => (
+            <ListItemButton
+              key={l.to}
+              component="a"
+              href={l.to}
               sx={{
                 borderRadius: '8px',
                 mb: 0.5,
@@ -162,7 +208,7 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
               <LayoutDashboard size={16} style={{ marginRight: 8 }} /> Dashboard
             </GhostButton>
           )}
-          <PrimaryButton component="a" href="#pricing" onClick={() => setOpen(false)} fullWidth>
+          <PrimaryButton component="a" href="/pricing" fullWidth>
             Get License
           </PrimaryButton>
         </Box>
