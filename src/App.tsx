@@ -82,6 +82,7 @@ function AppContent() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/faq" element={<FAQPage />} />
       </Routes>
+      <Footer />
 
       <PurchaseDialog
         open={authOpen}
