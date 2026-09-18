@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0A0F"/>
+      <stop offset="0.5" stop-color="#0E0E18"/>
+      <stop offset="1" stop-color="#0A0A0F"/>
+    </linearGradient>
+    <linearGradient id="brand-grad" x1="0" y1="0" x2="4000" y2="4000" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3131"/>
+      <stop offset="1" stop-color="#FF6102"/>
+    </linearGradient>
+    <linearGradient id="accent-line" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF3131"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="0.15" cy="0.3" r="0.5">
+      <stop offset="0" stop-color="#EA580C" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#EA580C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.85" cy="0.7" r="0.4">
+      <stop offset="0" stop-color="#FF3131" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#FF3131" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="badge-grad" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#FF3131"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+
+  <!-- Ambient glows -->
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.03">
+    <line x1="0" y1="105" x2="1200" y2="105" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="210" x2="1200" y2="210" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="315" x2="1200" y2="315" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="420" x2="1200" y2="420" stroke="#fff" stroke-width="0.5"/>
+    <line x1="0" y1="525" x2="1200" y2="525" stroke="#fff" stroke-width="0.5"/>
+    <line x1="200" y1="0" x2="200" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="400" y1="0" x2="400" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="600" y1="0" x2="600" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="800" y1="0" x2="800" y2="630" stroke="#fff" stroke-width="0.5"/>
+    <line x1="1000" y1="0" x2="1000" y2="630" stroke="#fff" stroke-width="0.5"/>
+  </g>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent-line)"/>
+
+  <!-- Logo mark (left side) -->
+  <g transform="translate(60, 165) scale(0.13)">
+    <path fill="url(#brand-grad)" d="M2382.21 1097.94c-127.7,46.77 -627.94,202.76 -231.83,315.37 79.87,22.7 142.94,35.14 216.15,68.13 313.9,141.44 346.79,417.31 179.58,760.37 -60.27,123.66 -1269.6,603.01 -1654.26,-26.93 -20.04,23.57 -168.8,368.29 -203,444.56 -44.13,98.41 -53.32,89.85 -29.74,152.4 86.09,228.39 206.88,380 356.86,496.26 544.81,422.33 1365.41,-74.62 1805.02,-439.28 100.06,-83 136.51,-131.87 216.09,-210.37 203.83,-201.02 398.06,-583.58 372.01,-908.35 -19.3,-240.71 -95.02,-445.2 -218.75,-635.48 -61.8,107.5 -132.6,295.71 -412.7,288.64 -312.28,-7.89 -384.16,-293.72 -395.44,-305.33z"/>
+    <path fill="url(#brand-grad)" d="M596.67 1273.71c21.06,46.04 113.14,162.42 146.96,198.95 291.33,314.57 681.91,505.92 1126.37,451.44 87.39,-10.71 151.46,-31.79 224.69,-46.69 -273.17,-46.55 -569.31,-159.79 -742.66,-358.16 -116.4,-133.19 -123.32,-197.74 69.21,-315.96 179.97,-110.52 757.04,-286.2 975.41,-316.75 41.39,-161.46 174.49,-207.91 226.58,-248.69 -371.06,-125.89 -807.87,-89.04 -1121.52,132.98 -171.78,121.59 -628.9,489.79 -905.06,502.87z"/>
+    <path fill="url(#brand-grad)" d="M2382.21 1097.94c11.28,11.61 83.15,297.44 395.44,305.33 280.1,7.07 373.88,-165.76 435.69,-273.27 123.72,190.28 176.45,379.39 195.76,620.1 26.05,324.77 -168.18,707.33 -372.01,908.35 -79.58,78.49 -116.03,127.37 -216.09,210.37 -439.61,364.66 -1260.21,861.61 -1805.02,439.28 -149.98,-116.26 -270.76,-267.87 -356.86,-496.26 -23.58,-62.54 -14.39,-53.99 29.74,-152.4 34.2,-76.27 182.96,-420.99 203,-444.56 384.66,629.94 1593.99,150.59 1654.26,26.93 167.21,-343.06 134.32,-618.93 -179.58,-760.37 -73.21,-32.98 -136.28,-45.43 -216.15,-68.13 -396.12,-112.61 104.12,-268.59 231.83,-315.37zm-1785.55 175.78c276.16,-13.07 733.28,-381.28 905.06,-502.87 313.65,-222.02 750.46,-258.87 1121.52,-132.98 -52.09,40.77 -185.19,87.22 -226.58,248.69 -218.37,30.55 -795.44,206.23 -975.41,316.75 -192.54,118.22 -185.61,182.77 -69.21,315.96 173.35,198.37 469.48,311.61 742.66,358.16 -73.23,14.9 -137.3,35.98 -224.69,46.69 -444.46,54.48 -835.04,-136.87 -1126.37,-451.44 -33.83,-36.53 -125.9,-152.9 -146.96,-198.95z"/>
+    <path fill="url(#brand-grad)" d="M2547.08 980c0.9,-372.78 488.21,-415.69 564.51,-78.2 73.37,324.51 -341.06,517.07 -516.48,240.91 -31.3,-49.28 -46.62,-104.77 -48.04,-162.71zm272.92 -224.81c-263.59,-11.29 -321.54,372.25 -76.92,452.97 241.14,79.57 395.56,-263.46 185.96,-413.4 -33.17,-23.72 -68.5,-36.24 -109.04,-39.57z"/>
+  </g>
+
+  <!-- Brand text -->
+  <text x="290" y="240" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="42" font-weight="800" fill="#ffffff">SoD</text>
+  <text x="368" y="240" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="42" font-weight="800" fill="#EA580C">Pro</text>
+  <text x="290" y="272" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="15" font-weight="500" fill="rgba(255,255,255,0.45)" letter-spacing="3">SET ON DESK</text>
+
+  <!-- Main title -->
+  <text x="60" y="340" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="48" font-weight="800" fill="#ffffff">Driving School</text>
+  <text x="60" y="395" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="48" font-weight="800" fill="url(#brand-grad)">Management Suite</text>
+
+  <!-- Description -->
+  <text x="60" y="445" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.6)">Complete desktop app for Pakistani driving schools.</text>
+  <text x="60" y="475" font-family="Inter, -apple-system, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.6)">Students, scheduling, finance, vehicles &amp; documents.</text>
+
+  <!-- Free trial badge -->
+  <rect x="60" y="510" width="195" height="42" rx="21" fill="url(#brand-grad)"/>
+  <text x="85" y="537" font-family="Manrope, Inter, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#ffffff">Free 30-Day Trial</text>
+
+  <!-- Right side decorative element -->
+  <circle cx="1050" cy="315" r="180" fill="none" stroke="rgba(234,88,12,0.08)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="140" fill="none" stroke="rgba(234,88,12,0.06)" stroke-width="1"/>
+  <circle cx="1050" cy="315" r="100" fill="none" stroke="rgba(234,88,12,0.04)" stroke-width="1"/>
+
+  <!-- Floating laptop mockup hint -->
+  <g transform="translate(920, 220)">
+    <rect width="220" height="145" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(234,88,12,0.2)" stroke-width="1.5"/>
+    <rect x="10" y="10" width="200" height="110" rx="3" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <!-- Screen content lines -->
+    <rect x="25" y="25" width="80" height="6" rx="3" fill="rgba(234,88,12,0.4)"/>
+    <rect x="25" y="40" width="170" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
+    <rect x="25" y="52" width="140" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="25" y="64" width="155" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
+    <rect x="25" y="76" width="120" height="4" rx="2" fill="rgba(255,255,255,0.04)"/>
+    <rect x="25" y="95" width="60" height="18" rx="4" fill="rgba(234,88,12,0.25)"/>
+    <rect x="95" y="95" width="60" height="18" rx="4" fill="rgba(255,255,255,0.05)"/>
+    <!-- Base -->
+    <path d="M20 145 L40 160 L180 160 L200 145 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(234,88,12,0.15)" stroke-width="1"/>
+  </g>
+
+  <!-- Bottom tagline -->
+  <text x="60" y="600" font-family="Inter, -apple-system, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.25)">setondesk.com</text>
+  <text x="1200" y="600" font-family="Inter, -apple-system, sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.25)" text-anchor="end">Windows Desktop App</text>
+</svg>

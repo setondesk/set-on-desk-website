@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Large binaries — do not commit
+SoD-Driving-School-Pro-Windows-1.0.0-Setup.exe
+SoD-instructor.v.1.0.0.apk
+
+# Design assets & screenshots — too large for git
+3.psd
+3.jpg
+Screenshot*.png
