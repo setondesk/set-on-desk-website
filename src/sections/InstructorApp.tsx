@@ -222,10 +222,12 @@ export default function InstructorApp() {
             </Box>
 
             <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-              <PrimaryButton href={DOWNLOAD_LINKS.android} download startIcon={<Download size={18} />}>
-                Download APK
-              </PrimaryButton>
-              <GhostButton href="#contact" startIcon={<Smartphone size={18} />}>
+              <a href={DOWNLOAD_LINKS.android} download style={{ textDecoration: 'none' }}>
+                <PrimaryButton component="span" startIcon={<Download size={18} />}>
+                  Download APK
+                </PrimaryButton>
+              </a>
+              <GhostButton component="a" href="#contact" startIcon={<Smartphone size={18} />}>
                 Request Access
               </GhostButton>
             </Box>

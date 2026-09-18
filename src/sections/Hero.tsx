@@ -191,7 +191,7 @@ export default function Hero() {
             <Box sx={{ display: 'flex', gap: 1.5, flexWrap: 'wrap' }}>
               <a href={DOWNLOAD_LINKS.windows} download style={{ textDecoration: 'none' }}>
                 <PrimaryButton
-                  as="span"
+                  component="span"
                   startIcon={<Download size={16} />}
                   sx={{ py: 1.4, px: 3.5, fontSize: '0.95rem' }}
                 >

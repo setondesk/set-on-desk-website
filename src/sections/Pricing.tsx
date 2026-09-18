@@ -210,7 +210,7 @@ function PricingCard({ plan: p, onBuy }: { plan: typeof plans[number]; onBuy: ()
             </PrimaryButton>
           ) : (
             <a href={DOWNLOAD_LINKS.windows} download style={{ textDecoration: 'none', display: 'block' }}>
-              <GhostButton as="span" fullWidth sx={{ py: 1, fontSize: '0.82rem' }}>
+              <GhostButton component="span" fullWidth sx={{ py: 1, fontSize: '0.82rem' }}>
                 {p.cta}
               </GhostButton>
             </a>

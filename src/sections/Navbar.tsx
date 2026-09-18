@@ -105,7 +105,7 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
             </GhostButton>
           )}
 
-          <PrimaryButton href="#pricing" size="small" sx={{ py: 1, px: 2.5, fontSize: '0.88rem' }}>
+          <PrimaryButton component="a" href="#pricing" size="small" sx={{ py: 1, px: 2.5, fontSize: '0.88rem' }}>
             Get License
           </PrimaryButton>
         </Box>
@@ -162,7 +162,7 @@ export default function Navbar({ onDashboardClick }: { onDashboardClick: () => v
               <LayoutDashboard size={16} style={{ marginRight: 8 }} /> Dashboard
             </GhostButton>
           )}
-          <PrimaryButton href="#pricing" onClick={() => setOpen(false)} fullWidth>
+          <PrimaryButton component="a" href="#pricing" onClick={() => setOpen(false)} fullWidth>
             Get License
           </PrimaryButton>
         </Box>
